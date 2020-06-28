@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Tweet from "./Tweet"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default function App(){
+
+  const [isRed, setRed] = useState(false);
+  const [count, setCount] = useState(0);
+
+  return( 
+    <div className="app">
+       <Tweet name="Oscar" message="This is a random tweet" numberOfLikes="30"/>
+       <Tweet name="John Snow" message="I am the true king" numberOfLikes="5"/>
+       <Tweet name="Traversy Media" message="700k my dudes" numberOfLikes="76"/>
+       <Tweet name="Mosh" message="My new course is available" numberOfLikes="450"/>
     </div>
-  );
+  )
 }
-
-export default App;
